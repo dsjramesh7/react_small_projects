@@ -6,6 +6,7 @@ import ImageSlider from "./components/image-slider/ImageSlider";
 import LoadMoreData from "./components/loadMoreData/LoadMoreData";
 import MenuBar from "./components/tree-view/MenuBar";
 import QRCodeGenerator from "./components/qr-code-generator/Qr";
+import Ldmode from "./components/light-dark-mode/Ldmode";
 
 const App = () => {
   return (
@@ -29,7 +30,10 @@ const App = () => {
       {/* <MenuBar /> */}
 
       {/* QR code component  */}
-      <QRCodeGenerator />
+      {/* <QRCodeGenerator /> */}
+
+      {/* LightDark Mode Component  */}
+      <Ldmode />
     </>
   );
 };
