@@ -5,6 +5,7 @@ import StarRating from "./components/star-rating";
 import ImageSlider from "./components/image-slider/ImageSlider";
 import LoadMoreData from "./components/loadMoreData/LoadMoreData";
 import MenuBar from "./components/tree-view/MenuBar";
+import QRCodeGenerator from "./components/qr-code-generator/Qr";
 
 const App = () => {
   return (
@@ -25,7 +26,10 @@ const App = () => {
       {/* <LoadMoreData /> */}
 
       {/* Tree-view component  */}
-      <MenuBar />
+      {/* <MenuBar /> */}
+
+      {/* QR code component  */}
+      <QRCodeGenerator />
     </>
   );
 };
