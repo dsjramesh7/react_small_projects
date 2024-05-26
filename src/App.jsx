@@ -4,6 +4,7 @@ import RandomColor from "./components/randomColoGenerator/RandomColor";
 import StarRating from "./components/star-rating";
 import ImageSlider from "./components/image-slider/ImageSlider";
 import LoadMoreData from "./components/loadMoreData/LoadMoreData";
+import MenuBar from "./components/tree-view/MenuBar";
 
 const App = () => {
   return (
@@ -21,7 +22,10 @@ const App = () => {
       {/* <ImageSlider url={"https://picsum.photos/v2/list"} limit={10} page={1} /> */}
 
       {/* loadMoreData component  */}
-      <LoadMoreData />
+      {/* <LoadMoreData /> */}
+
+      {/* Tree-view component  */}
+      <MenuBar />
     </>
   );
 };
