@@ -7,6 +7,7 @@ import LoadMoreData from "./components/loadMoreData/LoadMoreData";
 import MenuBar from "./components/tree-view/MenuBar";
 import QRCodeGenerator from "./components/qr-code-generator/Qr";
 import Ldmode from "./components/light-dark-mode/Ldmode";
+import ScrollIndicator from "./components/scroll-indicator";
 
 const App = () => {
   return (
@@ -33,7 +34,10 @@ const App = () => {
       {/* <QRCodeGenerator /> */}
 
       {/* LightDark Mode Component  */}
-      <Ldmode />
+      {/* <Ldmode /> */}
+
+      {/* scroll indicator component */}
+      <ScrollIndicator url={'https://dummyjson.com/products?limit=100'}/>
     </>
   );
 };
