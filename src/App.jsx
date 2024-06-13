@@ -8,6 +8,7 @@ import MenuBar from "./components/tree-view/MenuBar";
 import QRCodeGenerator from "./components/qr-code-generator/Qr";
 import Ldmode from "./components/light-dark-mode/Ldmode";
 import ScrollIndicator from "./components/scroll-indicator";
+import TodoList from "./components/todoList/TodoList";
 
 const App = () => {
   return (
@@ -37,7 +38,10 @@ const App = () => {
       {/* <Ldmode /> */}
 
       {/* scroll indicator component */}
-      <ScrollIndicator url={'https://dummyjson.com/products?limit=100'}/>
+      {/* <ScrollIndicator url={'https://dummyjson.com/products?limit=100'}/> */}
+
+      {/* Todo list  */}
+      <TodoList />
     </>
   );
 };
