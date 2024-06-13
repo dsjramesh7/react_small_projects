@@ -4,18 +4,33 @@ import Tasks from "./taskComponents/Tasks";
 const TodoList = () => {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState("");
+  const [editValue, setEditValue] = useState(-1); 
+  const [edit, setEdit] = useState(false); 
 
   const handleAddTask = () => {
-    if (input.trim() !== "") {
+    if (edit && input.trim() !== "") {
+      const updatedTasks = [...tasks];
+      updatedTasks[editValue] = input;
+      setTasks(updatedTasks);
+      setInput("");
+      setEdit(false);
+      setEditValue(-1);
+    } else if (!edit && input.trim() !== "") {
       setTasks([...tasks, input]);
       setInput("");
     }
   };
 
-  const handleDeleteTask = (id) => {
-    setTasks(tasks.filter((task, index) => index !== id));
+  const handleDeleteTask = (taskId) => {
+    setTasks(tasks.filter((task, index) => index !== taskId));
   };
-  console.log(tasks);
+
+  const handleEditTask = (taskId) => {
+    setInput(tasks[taskId]); 
+    setEditValue(taskId);
+    setEdit(true);
+  };
+
   return (
     <>
       <div className="flex gap-x-3">
@@ -24,10 +39,14 @@ const TodoList = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <div onClick={handleAddTask}>Add</div>
+        <div onClick={handleAddTask}>{edit ? "Update" : "Add"}</div>
       </div>
       <div>
-        <Tasks tasks={tasks} handleDeleteTask={handleDeleteTask} />
+        <Tasks
+          tasks={tasks}
+          handleDeleteTask={handleDeleteTask}
+          handleEditTask={handleEditTask}
+        />
       </div>
     </>
   );
