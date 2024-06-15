@@ -1,6 +1,6 @@
 import React from "react";
 
-const Tasks = ({ tasks, handleDeleteTask }) => {
+const Tasks = ({ tasks, handleDeleteTask, handleEditTask }) => {
   return (
     <>
       {tasks && tasks.length > 0 ? (
@@ -8,7 +8,7 @@ const Tasks = ({ tasks, handleDeleteTask }) => {
           <div className="flex gap-x-8" key={i}>
             <p>{task}</p>
             <div onClick={() => handleDeleteTask(i)}>Delete</div>
-            <div>Edit</div>
+            <div onClick={() => handleEditTask(i)}>Edit</div>
           </div>
         ))
       ) : (
