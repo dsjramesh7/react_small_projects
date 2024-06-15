@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Tasks from "./taskComponents/Tasks";
 
 const TodoList = () => {
   const [input, setInput] = useState("");
   const [tasks, setTasks] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
+
+  useEffect(() => {
+    const fetchApI = async () => {
+      const response = await fetch("https://dummyjson.com/todos?limit=10");
+      // console.log(response);
+      const data = await response.json();
+      // setTasks(data)
+      console.log(data.todos);
+    };
+    fetchApI();
+  }, []);
 
   const handleAddTasks = () => {
     if (editIndex !== null) {
